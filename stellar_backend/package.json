@@ -1,0 +1,16 @@
+{
+  "name": "stellar_project",
+  "version": "1.0.0",
+  "description": "implement Stellar sdk.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yuchen Liu",
+  "license": "ISC",
+  "dependencies": {
+    "stellar-sdk": "^4.0.2",
+    "node-fetch": "^2.6.0",
+    "express-generator": "^4.16.0"
+  }
+}
