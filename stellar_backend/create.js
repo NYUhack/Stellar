@@ -1,6 +1,3 @@
-const express = require("express");
-const router = express.Router();
-const { db } = require("../../services/firestore.js");
 const StellarSdk = require('stellar-sdk');
 const fetch = require('node-fetch');
 const server = new StellarSdk.Server("https://horizon-testnet.stellar.org");
@@ -23,29 +20,36 @@ async function createAccount() { //if create successfully, return account info
         account.balances.forEach((balance) => {
             console.log("Type:", balance.asset_type, ", Balance:", balance.balance);
         });
-        return [public_key, private_key];
     } catch (e) {
         console.error("ERROR!", e);
     }
 }
 
-router.get("/", (req, res) => {
-  const email = req.body.email;
-  const password = req.body.passowrd;
-
-  const auth = db.auth();
-  auth
-    .signInWithEmailAndPassword(email, password)
-    .then(res => {
-      console.log(res);
-      const keys = createAccount(); //returns an array. [public_key, private_key]
-
-      //store keys into database with email, username, password
-
+function transactionHistory(account_publickey) {
+    server.transactions()
+    .forAccount(account_publickey)
+    .call()
+    .then(function (page) {
+        console.log('Page 1: ');
+        console.log(page.records);
+        return page.next();
     })
-    .catch(error => {
-      res.send(error.message);
+    .then(function (page) {
+        console.log('Page 2: ');
+        console.log(page.records);
+    })
+    .catch(function (err) {
+        console.log(err);
     });
-});
+}
 
-module.exports = router;
+function getBalance(account_publickey){
+    server.loadAccount(account_publickey)
+    .then(Account => {
+        console.log('Balance: ' + Account.balances[0].balance);
+        console.log('Type: ' + Account.balances[0].asset_type);
+    
+    })
+}
+
+createAccount();
