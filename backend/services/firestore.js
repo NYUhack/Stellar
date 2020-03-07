@@ -1,5 +1,5 @@
 let firebase = require("firebase-admin");
-let serviceAccount = require("../stellar-nyu-firebase-adminsdk-5dr9z-5094be76f1.json");
+let serviceAccount = require("../stellar-nyu-firebase-adminsdk-5dr9z-4ab149d8f2.json");
 
 //init the firebase connection to backend
 firebase.initializeApp({
