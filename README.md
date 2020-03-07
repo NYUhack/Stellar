@@ -9,6 +9,7 @@
 - [ ] Sharing your donation to socail media ( using facebook / twitter api)
 - [ ] Deciding which models to use in traning
 - [ ] Connecting the pytorch model to the UI
+- [ ] Contacting orgs where very likely disasters are going to happen in order to use our service to connect them with people
 - [ ] Using NLP to better decided which disaster need attention and donations now (optional)
 
 ### Presentation
