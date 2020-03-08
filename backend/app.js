@@ -1,15 +1,15 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var logger = require("morgan"); //http request logger (records every http requests)
-var session = require("express-session"); //don't need to login on every page
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const logger = require("morgan"); //http request logger (records every http requests)
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var logInRouter = require("./routes/credentials/login");
-var signInRouter = require("./routes/credentials/signup");
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const logInRouter = require("./routes/credentials/login");
+const signInRouter = require("./routes/credentials/signup");
+const stellarRouters = require("./routes/stellar/path_payment");
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -23,14 +23,15 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/login", logInRouter);
 app.use("/signin", signInRouter);
+app.use("/payments", stellarRouters);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -40,4 +41,9 @@ app.use(function(err, req, res, next) {
   res.render("error");
 });
 
-module.exports = app;
+// exports.schedule = functions.https.onRequest(app);
+const port = process.env.PORT || "3000";
+
+app.listen(port, () => {
+  console.log("yayyyyy");
+});

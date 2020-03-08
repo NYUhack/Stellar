@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./stylesheets/Styles.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body style= "margin:0" >
+<h1 class = "prettyHeader">Sulbha Aggarwal</h1>
+<div class="container">
+  <h2 style = "padding-top: 30px" >DONATE TO OUR OGANIZATION</h2>
+  <div>
+	<select class="unstyled-button" style= "width: absolute" >
+		<option value="Effective">Effective</option>
+		<option value="Detrimental">Detrimental</option>
+		<option value="No Effect">No Effect</option>
+		<option value="Inconclusive">Inconclusive</option>
+	</select>
+	<table style = "width: 50vw" class = "styling">
+		Amount:
+		<tr>
+        <th><button  id = "600" value = "600" class="unstyled-button amtButton"> $600</button></th>
+        <th><button  id = "500" value = "500" class="unstyled-button selected amtButton" > $500</button></th>
+        <th><button  id = "400" value = "400" class="unstyled-button amtButton"> $400</button></th>
+		<th><button  id = "300" value = "300" class="unstyled-button amtButton"> $300</button></th>
+		<th><button  id = "200" value = "200" class="unstyled-button amtButton"> $200</button></th>
+		<th><button  id = "other" value = "other" class="unstyled-button amtButton"> other</button></th>
+		</tr>
+	</table>
+	<div class="lower-section">
+	<table class = "styling" style = "width: 50vw">
+		<tr>
+        <th><button  id = "donateMonthly" value = "month" class="unstyled-button month duration"> Donate Monthy</button></th>
+        <th><button  id = "donateOnce" value = "" class="unstyled-button duration"> Donate Once</button></th>
+		</tr>
+	</div>
+	</table>
+	<button class="btn btn-success" id = "donatedMoney" > Donate</button>
+  </div>
+  <!--<form action="/action_page.php" >
+	<input style="visibility:hidden;" type="button" value="Hello world!" disabled>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <input type="submit" value="Submit">-->
+  </form>
+</div>
+<script src="javascript.js"></script>
+</body>
+</html>

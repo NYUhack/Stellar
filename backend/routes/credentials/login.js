@@ -9,31 +9,39 @@ router.get("/", (req, res) => {
   const auth = db.auth();
   auth
     .logInWithEmailAndPassword(email, password)
-    .then(res => {
-      console.log(res);
-      //check for the users stellar account here
-      //if user has a stellar acount send a status of 200 back to the client
-
-      const public_key = 0
-      const private_key = 0
-
-      server.loadAccount(public_key)
-        .catch(function (error) { //check just in case the account doesn't exist
-          if (error instanceof StellarSdk.NotFoundError) {
-            res.send(404); //error
-            throw new Error('The destination account does not exist!');
-          } else {
-            res.send(404);
-          }
-        })
-        .then(function (Account) {
-          //We have the user's Account object. do something like check their history or balance.
-        })
-
+    .then(response => {
+      //once the user is logged on then query for the users public key
+      db.collection("Users")
+        .get(email)
+        .then(snapshot => {
+          //query for the users public key and load to the network
+          const public_key = snapshot.data().Stellar_Address;
+          server
+            .loadAccount(public_key)
+            .catch(function(error) {
+              //check just in case the account doesn't exist
+              if (error instanceof StellarSdk.NotFoundError) {
+                res.status(404).send(error); //error
+                throw new Error("The destination account does not exist!");
+              } else {
+                res.send(404);
+              }
+            })
+            .then(function(Account) {
+              res.status(200).send(Account);
+            });
+        });
     })
     .catch(error => {
+      //error if the login does not work
       res.send(error.message);
     });
 });
 
 module.exports = router;
+
+// Public Key:
+// GCHTTFP2SPYMNWL5SRXMFSIER7RSMZBIW4I6IAAXECB6NGO536HFIGZS
+
+// Secret Key:
+// SBOAM5KUXXKSN4AYQA47VDSJSANDVKYG35BMXLY2VHAYEQ7WEU43HV52
