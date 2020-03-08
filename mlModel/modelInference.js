@@ -1,18 +1,14 @@
 //const onnx = require('onnxjs');
 const onnx = require('onnxjs-node');
 
-// uncomment the following line to enable ONNXRuntime node binding
-// require('onnxjs-node');
-
 const assert = require('assert');
 
 async function main() {
   // Create an ONNX inference session with WebAssembly backend.
-  //const session = new onnx.InferenceSession({backendHint: 'wasm'});
   const session = new onnx.InferenceSession();
 
   // Load an ONNX model. This model takes two tensors of the same size and return their sum.
-  await session.loadModel("./myModel.onnx");
+  await session.loadModel("./officialModel.onnx");
 
   const x = new Float32Array(1).fill(.5);                      // Creates input data as js datatype, fill is input value
   const tensorX = new onnx.Tensor(x, 'float32', [1,1]);       // Converts input to onnx.js tensor
