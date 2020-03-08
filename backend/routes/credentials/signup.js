@@ -41,7 +41,7 @@ router.get("/", (req, res) => {
       const keys = createAccount(); //returns an array. [public_key, private_key]
 
       //store keys into database with email, username, password
-
+      
     })
     .catch(error => {
       res.send(error.message);
