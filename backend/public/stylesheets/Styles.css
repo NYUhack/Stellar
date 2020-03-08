@@ -1,62 +1,34 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.prettyHeader{font-family: 'Playfair Display', serif;}
+
+h1{
+	position: relative ;
+	color: white ;
+	z-index: 1;
+	padding: 20px ;
 }
 
-.btn-seconday:focus {
-  box-shadow: none !important;
-}
-
-.container {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-#donatedMoney {
-  margin-top: 1rem;
-}
-
-#donateMonthly, #donateOnce {
-  padding: 1rem;
-  text-align: center;
-}
-
-.prettyHeader {
-  font-family: 'Playfair Display', serif;
-}
-
-h1 {
-  position: relative;
-  color: white;
-  z-index: 1;
-  padding: 20px;
-}
-
-table, td, th {
+table, td, th {  
   border: 1px solid #ddd;
   text-align: left;
 }
 
-h1:before {
-  content: '';
-  width: 100vw;
-  height: 50vh;
-  background-color: #8A998A;
-  border-radius: 50%;
-  display: block;
-  top: -35vh;
-  left: -50vw;
-  position: absolute;
-  z-index: -1;
-  opacity: 1;
+
+
+h1:before{
+	content: '' ;
+	width: 100vw ;
+	height: 50vh ;
+	background-color: #8a998a ;
+	border-radius: 50% ;
+	display: block;
+	top: -35vh ;
+	left: -50vw ;
+	position: absolute ;
+	z-index: -1 ;
+	opacity: 1;
 }
 
 .unstyled-button {
@@ -65,30 +37,20 @@ h1:before {
   background: none;
 }
 
-ul li {
+ul li{
   display: inline;
 }
 
-.month {
-  background-color: lightblue;
+th
+{
+	
 }
 
-.selected {
-  background-color: lightblue;
-}
-
-.lower-section {
-  padding-top: 40px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-}
-
-.styling button {
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
+.styling button
+{
+	cursor: pointer;
+	width:100% ;
+	text-align: left ;
 }
 
 input[type=text], select, textarea {
@@ -112,8 +74,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #45A049;
+  background-color: #45a049;
 }
-
-/* padding: 20px;
-} */
+  padding: 20px;
+}
