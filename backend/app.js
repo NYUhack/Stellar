@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
@@ -48,5 +47,3 @@ const port = process.env.PORT || "3000";
 app.listen(port, () => {
   console.log("yayyyyy");
 });
-=======
->>>>>>> ce87e4add5a49fda8bddd5f07477203b5d537833

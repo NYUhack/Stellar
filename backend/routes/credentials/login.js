@@ -4,7 +4,7 @@ const { db } = require("../../services/firestore.js");
 
 router.post("/", (req, res) => {
   const email = req.body.email;
-  const password = req.body.passowrd;
+  const password = req.body.password;
 
   const auth = db.auth();
   auth
