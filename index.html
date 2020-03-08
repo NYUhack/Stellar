@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="Styles.css">
+<link href= 
+
+</head>
+<body style= "margin:0" >
+
+<h1 class = "prettyHeader">Sulbha Aggarwal</h1>
+
+<div class="container">
+ 
+ 
+  <p style = "padding-top: 30px" >DONATE TO OUR OGANIZATION</p>
+  <div>
+    /
+	<button class="unstyled-button">Regular Button</button>
+	/
+	<select class="unstyled-button" style= "width: 7vw" >
+		<option value="Effective">Effective</option>
+		<option value="Detrimental">Detrimental</option>
+		<option value="No Effect">No Effect</option>
+		<option value="Inconclusive">Inconclusive</option>
+	</select>
+	
+	<table style = "width: 50vw" class = "styling">
+		Amount:
+		<tr>
+        <th id="600"><button class="unstyled-button"> $600</button></th>
+        <th><button class="unstyled-button"> $500</button></th>
+        <th><button class="unstyled-button"> $400</button></th>
+		<th><button class="unstyled-button"> $300</button></th>
+		<th><button class="unstyled-button"> $200</button></th>
+		<th><button class="unstyled-button"> other</button></th>
+		</tr>
+	</table>
+	
+	<div style = "padding-top: 40px">
+	<table class = "styling" style = "width: 50vw">
+		<tr>
+        <th><button class="unstyled-button"> Donate Monthy</button></th>
+        <th><button class="unstyled-button"> Donate Once</button></th>
+		</tr>
+	</div>
+	</table>
+  </div>
+  
+  
+  
+  <!--<form action="/action_page.php" >
+	<input style="visibility:hidden;" type="button" value="Hello world!" disabled>
+	
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">-->
+  </form>
+</div>
+
+<script>
+document.getElementById ("600").addEventListener ("click", myFunction, false);
+function myFunction() {
+  //var th = document.getElementById("600");
+  //th.style.background-color = "green";
+  alert("you have donated 600");
+}
+</script>
+</body>
+</html>

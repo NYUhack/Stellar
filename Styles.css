@@ -1,0 +1,80 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.prettyHeader{font-family: 'Playfair Display', serif;}
+
+h1{
+	position: relative ;
+	color: white ;
+	z-index: 1;
+	padding: 20px ;
+}
+
+table, td, th {  
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+
+
+h1:before{
+	content: '' ;
+	width: 100vw ;
+	height: 50vh ;
+	background-color: #8a998a ;
+	border-radius: 50% ;
+	display: block;
+	top: -35vh ;
+	left: -50vw ;
+	position: absolute ;
+	z-index: -1 ;
+	opacity: 1;
+}
+
+.unstyled-button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+ul li{
+  display: inline;
+}
+
+th
+{
+	
+}
+
+.styling button
+{
+	cursor: pointer;
+	width:100% ;
+	text-align: left ;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+  padding: 20px;
+}
