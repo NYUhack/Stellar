@@ -5,6 +5,8 @@ window.onload = function() {
   function donatedMoney() {
     var amount = document.getElementsByClassName("selected")[0].value;
     const email = localStorage.getItem("email");
+
+    //TODO: call the route that sends the XLM to the backend
   }
   document.getElementById("600").addEventListener("click", donate600, false);
   function donate600() {

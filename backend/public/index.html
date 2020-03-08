@@ -1,54 +1,173 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="./stylesheets/Styles.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
-<body style= "margin:0" >
-<h1 class = "prettyHeader">Sulbha Aggarwal</h1>
-<div class="container">
-  <h2 style = "padding-top: 30px" >DONATE TO OUR OGANIZATION</h2>
-  <div>
-	<select class="unstyled-button" style= "width: absolute" >
-		<option value="Effective">Effective</option>
-		<option value="Detrimental">Detrimental</option>
-		<option value="No Effect">No Effect</option>
-		<option value="Inconclusive">Inconclusive</option>
-	</select>
-	<table style = "width: 50vw" class = "styling">
-		Amount:
-		<tr>
-        <th><button  id = "600" value = "600" class="unstyled-button amtButton"> $600</button></th>
-        <th><button  id = "500" value = "500" class="unstyled-button selected amtButton" > $500</button></th>
-        <th><button  id = "400" value = "400" class="unstyled-button amtButton"> $400</button></th>
-		<th><button  id = "300" value = "300" class="unstyled-button amtButton"> $300</button></th>
-		<th><button  id = "200" value = "200" class="unstyled-button amtButton"> $200</button></th>
-		<th><button  id = "other" value = "other" class="unstyled-button amtButton"> other</button></th>
-		</tr>
-	</table>
-	<div class="lower-section">
-	<table class = "styling" style = "width: 50vw">
-		<tr>
-        <th><button  id = "donateMonthly" value = "month" class="unstyled-button month duration"> Donate Monthy</button></th>
-        <th><button  id = "donateOnce" value = "" class="unstyled-button duration"> Donate Once</button></th>
-		</tr>
-	</div>
-	</table>
-	<button class="btn btn-success" id = "donatedMoney" > Donate</button>
-  </div>
-  <!--<form action="/action_page.php" >
-	<input style="visibility:hidden;" type="button" value="Hello world!" disabled>
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    <input type="submit" value="Submit">-->
-  </form>
-</div>
-<script src="javascript.js"></script>
-</body>
+<html lang="en">
+  <head>
+    <title>Money for Good</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/iconic/css/material-design-iconic-font.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/css-hamburgers/hamburgers.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/animsition/css/animsition.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/daterangepicker/daterangepicker.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/util.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/signup.css" />
+    <!--===============================================================================================-->
+  </head>
+  <body style="background-color: #999999;">
+    <div class="limiter">
+      <div class="container-login100">
+        <div
+          class="login100-more"
+          style="background-image: url('images/bg-01.jpg');"
+        ></div>
+
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+          <form class="login100-form validate-form">
+            <span class="login100-form-title p-b-59">
+              Sign Up
+            </span>
+
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Valid email is required: ex@abc.xyz"
+            >
+              <span class="label-input100">Email</span>
+              <input
+                id="email"
+                class="input100"
+                type="text"
+                name="email"
+                placeholder="Email addess..."
+              />
+              <span class="focus-input100"></span>
+            </div>
+
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Username is required"
+            >
+              <span class="label-input100">Username</span>
+              <input
+                id="username"
+                class="input100"
+                type="text"
+                name="username"
+                placeholder="Username..."
+              />
+              <span class="focus-input100"></span>
+            </div>
+
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Password is required"
+            >
+              <span class="label-input100">Password</span>
+              <input
+                id="password"
+                class="input100"
+                type="text"
+                name="pass"
+                placeholder="*************"
+              />
+              <span class="focus-input100"></span>
+            </div>
+
+            <div class="flex-m w-full p-b-33">
+              <div class="contact100-form-checkbox">
+                <input
+                  class="input-checkbox100"
+                  id="ckb1"
+                  type="checkbox"
+                  name="remember-me"
+                />
+                <label class="label-checkbox100" for="ckb1">
+                  <span class="txt1">
+                    I agree to the
+                    <a href="#" class="txt2 hov1">
+                      Terms of User
+                    </a>
+                  </span>
+                </label>
+              </div>
+            </div>
+
+            <div class="container-login100-form-btn">
+              <div class="wrap-login100-form-btn">
+                <div class="login100-form-bgbtn"></div>
+                <button onclick="onsubmit()" class="login100-form-btn">
+                  Sign Up
+                </button>
+              </div>
+
+              <a
+                href="#"
+                class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30"
+              >
+                Sign in
+                <i class="fa fa-long-arrow-right m-l-5"></i>
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function onsubmit(e) {
+        e.preventDefault();
+        const email = document.getElementById("email").text();
+        const password = document.getElementById("password").text();
+        const username = document.getElementById("username").text();
+
+        console.log(email + " " + password);
+      }
+    </script>
+  </body>
 </html>
