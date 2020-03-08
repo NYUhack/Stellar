@@ -7,7 +7,7 @@ firebase.initializeApp({
   databaseURL: "https://stellar-nyu.firebaseio.com"
 });
 
-const db = firebase.firestore();
+const db = firebase;
 
 module.exports = {
   db

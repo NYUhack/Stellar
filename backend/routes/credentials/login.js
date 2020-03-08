@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { db } = require("../../services/firestore.js");
 
-router.get("/", (req, res) => {
+router.post("/", (req, res) => {
   const email = req.body.email;
   const password = req.body.passowrd;
 
@@ -39,9 +39,3 @@ router.get("/", (req, res) => {
 });
 
 module.exports = router;
-
-// Public Key:
-// GCHTTFP2SPYMNWL5SRXMFSIER7RSMZBIW4I6IAAXECB6NGO536HFIGZS
-
-// Secret Key:
-// SBOAM5KUXXKSN4AYQA47VDSJSANDVKYG35BMXLY2VHAYEQ7WEU43HV52
