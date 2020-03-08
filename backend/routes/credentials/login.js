@@ -1,4 +1,6 @@
 const express = require("express");
+const fs = require('fs');
+const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const router = express.Router();
@@ -38,6 +40,15 @@ router.get("/", (req, res) => {
     .catch(error => {
       res.send(error.message);
     }); */
+});
+app.use(bodyParser.json());
+
+
+router.post('/auth', function (request, response) {
+  fs.writeFile('./test.txt', JSON.stringify(request), (e) => {
+    console.log(e);
+  });
+
 });
 
 module.exports = router;
