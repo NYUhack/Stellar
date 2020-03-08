@@ -1,9 +1,13 @@
 const express = require("express");
+const path = require('path');
+const app = express();
 const router = express.Router();
-const { db } = require("../../services/firestore.js");
+//const { db } = require("../../services/firestore.js");
+app.use(express.static(path.join(__dirname, '../../public/Login')));
 
 router.get("/", (req, res) => {
-  const email = req.body.email;
+  res.sendFile(path.join(__dirname, '../../public') + '/login.html');
+  /* const email = req.body.email;
   const password = req.body.passowrd;
 
   const auth = db.auth();
@@ -33,7 +37,7 @@ router.get("/", (req, res) => {
     })
     .catch(error => {
       res.send(error.message);
-    });
+    }); */
 });
 
 module.exports = router;
